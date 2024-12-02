@@ -1,6 +1,7 @@
 apply plugin: "com.android.application"
 apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "com.facebook.react"
+apply plugin: 'com.google.gms.google-services' // Đảm bảo thêm plugin Firebase
 
 /**
  * This is the configuration block to customize your React Native Android app.
@@ -77,9 +78,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.dnthainew"
+    namespace "com.dnthainew"  // Tên không gian ứng dụng của bạn
     defaultConfig {
-        applicationId "com.dnthainew"
+        applicationId "com.dnthainew"  // Đảm bảo applicationId chính xác
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -98,8 +99,7 @@ android {
             signingConfig signingConfigs.debug
         }
         release {
-            // Caution! In production, you need to generate your own keystore file.
-            // see https://reactnative.dev/docs/signed-apk-android.
+            // Chú ý: Trong môi trường sản xuất, bạn cần phải tự tạo một tệp keystore.
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
@@ -111,6 +111,11 @@ dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
 
+    // Thêm Firebase Authentication (nếu cần) và Firestore (hoặc Realtime Database)
+    implementation 'com.google.firebase:firebase-auth:21.1.0'  // Firebase Authentication
+    implementation 'com.google.firebase:firebase-firestore:24.0.0'  // Firebase Firestore
+
+    // Nếu bạn muốn sử dụng Hermes (tùy chọn, có thể thay đổi nếu không dùng)
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
     } else {

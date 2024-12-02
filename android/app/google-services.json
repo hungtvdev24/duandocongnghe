@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1033410144766",
+    "project_id": "duanbanhang-31c29",
+    "storage_bucket": "duanbanhang-31c29.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1033410144766:android:be9aada53350f84a4438af",
+        "android_client_info": {
+          "package_name": "com.dnthainew"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9d2JQu70pIp6khJi_BGnqT6mVvKBLf2g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

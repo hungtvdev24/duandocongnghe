@@ -8,13 +8,28 @@ buildscript {
         kotlinVersion = "1.9.24"
     }
     repositories {
-        google()
+        google()  // Thêm repository google nếu chưa có
         mavenCentral()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle")
+        // Plugin cho Android Gradle
+        classpath("com.android.tools.build:gradle:7.0.4")  // Phiên bản của Android Gradle Plugin (chỉnh lại nếu cần)
+
+        // Plugin React Native Gradle
         classpath("com.facebook.react:react-native-gradle-plugin")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
+
+        // Plugin Kotlin
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
+
+        // Plugin Google Services
+        classpath("com.google.gms:google-services:4.4.2")  // Phiên bản mới nhất của Google Services Plugin
+    }
+}
+
+allprojects {
+    repositories {
+        google()  // Đảm bảo google repository đã được thêm vào
+        mavenCentral()
     }
 }
 
